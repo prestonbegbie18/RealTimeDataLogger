@@ -12,24 +12,20 @@ function addANewNumber()
   {
     newNum = Number(newNum);
     numberValues.push(newNum);
+    var newTotal = calculateTotal();
+    document.getElementById("total").innnerHTML = newTotal;
+    document.getElementById("average").innnerHTML = newTotal / numberValues.length;
   }
 }
 
-function updateTotal()
+function CalculateTotal()
 {
   //go through each element in an array and add it to a running total
   //update the screen to show what that total is
-  var total = 0;
+  var runningTotal = 0;
   for(var i = 0; i < numberValues.length; i++)
   {
-    total = total + numberValues[i];
+    RunningTotal = runningTotal + numberValues[i];
   }
-  document.getElementById("total").innnerHTML = total;
-}
-
-function updateAverage()
-{
-  //go through each element in an array and add it to a running total
-  //then divide by the number of elements in the array
-  //then update the screen to show the average
+  return runningTotal;
 }

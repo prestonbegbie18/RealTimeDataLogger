@@ -8,7 +8,7 @@ function addANewNumber()
   //if it is, add it to the  back of the array
   //if it is not, give it a warning or error
   var newNum = document.getElementById("dataInput").value;
-  if( isNaN(newNum) == false )
+  if(isNaN(newNum) == false)
   {
     newNum = Number(newNum);
     numberValues.push(newNum);
@@ -18,14 +18,25 @@ function addANewNumber()
   }
 }
 
-function CalculateTotal()
+function calculateTotal()
 {
   //go through each element in an array and add it to a running total
   //update the screen to show what that total is
   var runningTotal = 0;
   for(var i = 0; i < numberValues.length; i++)
   {
-    RunningTotal = runningTotal + numberValues[i];
+    runningTotal = runningTotal + numberValues[i];
   }
   return runningTotal;
+}
+
+function updateAverage()
+{
+  var average = 0;
+  for(var i = 0; i < numberValues.length; i++)
+  {
+    average = average + numberValues[i];
+  }
+  average = average/numberValues.length;
+  document.getElementById("average").innerHTML = average;
 }
